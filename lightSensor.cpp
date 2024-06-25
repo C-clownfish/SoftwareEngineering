@@ -1,44 +1,44 @@
 #include "lightSensor.h"
 
-lightSensor::lightSensor(double length, double width, double height) {
-	this->length = length;
-	this->width = width;
-	this->height = height;
+lightSensor::lightSensor(double x, double y, double z) {
+	this->x = x;
+	this->y = y;
+	this->z = z;
 }
 
 
 lightSensor::lightSensor() {
-	this->length = 0;
-	this->width = 0;
-	this->height = 0;
+	this->x = 0;
+	this->y = 0;
+	this->z = 0;
 }
 
 
-double lightSensor::Get_length() {
-	return this->length;
+double lightSensor::Get_X() {
+	return this->x;
 }
 
 
-double lightSensor::Get_width() {
-	return this->width;
+double lightSensor::Get_Y() {
+	return this->y;
 }
 
 
-double lightSensor::Get_height() {
-	return this->height;
+double lightSensor::Get_Z() {
+	return this->z;
 }
 
 
-void lightSensor::Set_length(double length) {
-	this->length = length;
+void lightSensor::Set_X(double x) {
+	this->x = x;
 }
 
 
-void lightSensor::Set_width(double width) {
-	this->width = width;
+void lightSensor::Set_Y(double y) {
+	this->y = y;
 }
 
 
-void lightSensor::Set_height(double) {
-	this->height = height;
+void lightSensor::Set_Z(double) {
+	this->z = z;
 }

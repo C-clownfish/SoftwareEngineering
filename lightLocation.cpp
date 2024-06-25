@@ -1,8 +1,8 @@
 #include "lightLocation.h"
-lightLocation::lightLocation(double length, double width, double height, double watt) {
-	this->length = length;
-	this->width = width;
-	this->height = height;
+lightLocation::lightLocation(double x, double y, double z, double watt) {
+	this->x = x;
+	this->y = y;
+	this->z = z;
 	this->watt = watt;
 	this->averageWatt = 0;
 	this->maxWatt = 0;
@@ -11,9 +11,9 @@ lightLocation::lightLocation(double length, double width, double height, double 
 
 
 lightLocation::lightLocation() {
-	this->length = 0;
-	this->width = 0;
-	this->height = 0;
+	this->x = 0;
+	this->y = 0;
+	this->z = 0;
 	this->watt = 0;
 	this->averageWatt = 0;
 	this->maxWatt = 0;
@@ -21,18 +21,18 @@ lightLocation::lightLocation() {
 }
 
 
-double lightLocation::Get_length() {
-	return this->length;
+double lightLocation::Get_X() {
+	return this->x;
 }
 
 
-double lightLocation::Get_width() {
-	return this->width;
+double lightLocation::Get_Y() {
+	return this->y;
 }
 
 
-double lightLocation::Get_height() {
-	return this->height;
+double lightLocation::Get_Z() {
+	return this->z;
 }
 
 
@@ -56,18 +56,18 @@ double lightLocation::Get_averageWatt() {
 }
 
 
-void lightLocation::Set_length(double length) {
-	this->length = length;
+void lightLocation::Set_X(double x) {
+	this->x = x;
 }
 
 
-void lightLocation::Set_width(double width) {
-	this->width = width;
+void lightLocation::Set_Y(double y) {
+	this->y = y;
 }
 
 
-void lightLocation::Set_height(double height) {
-	this->height = height;
+void lightLocation::Set_Z(double z) {
+	this->z = z;
 }
 
 
