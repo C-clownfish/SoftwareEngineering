@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include "pch.h"
 using namespace std;
 
 int numberOfLight = 0;
