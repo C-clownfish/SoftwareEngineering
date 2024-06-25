@@ -6,6 +6,7 @@ windowAttribute::windowAttribute(double x, double y, double z,double openPercent
 	this->z = z;
 	this->openPercent = openPercent;
 	this->name = name;
+	this->number++;
 }
 
 
@@ -13,8 +14,9 @@ windowAttribute::windowAttribute() {
 	this->x = 0;
 	this->y = 0;
 	this->z = 0;
-	this->openPercent = 0;
+	this->openPercent = 1;
 	this->name = "´°»§" + to_string(this->number);
+	this->number++;
 }
 
 

@@ -133,6 +133,7 @@
     <ClCompile Include="lightLocation.cpp" />
     <ClCompile Include="lightSensor.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SunTime.cpp" />
     <ClCompile Include="Temperature.cpp" />
     <ClCompile Include="TemperatureControl.cpp" />
     <ClCompile Include="windowAttribute.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="lightLocation.h" />
     <ClInclude Include="lightSensor.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="SunTime.h" />
     <ClInclude Include="Temperature.h" />
     <ClInclude Include="TemperatureControl.h" />
     <ClInclude Include="windowAttribute.h" />

@@ -1,6 +1,6 @@
 #include "temperature.h"
-#include "pch.h"
-using namespace std;
+//#include "pch.h"
+//using namespace std;
 
 Temperature::Temperature() {
     this->currentTemp = 0.0;

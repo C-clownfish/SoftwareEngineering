@@ -6,6 +6,7 @@
 #include "lightLocation.h"
 #include "lightSensor.h"
 #include "windowAttribute.h"
+#include "SunTime.h"
 #include <iostream>
 #include <string>
 #include <vector>

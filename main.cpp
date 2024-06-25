@@ -6,22 +6,34 @@
 #include "Temperature.h"
 #include "TemperatureControl.h"
 #include "windowAttribute.h"
+#include "SunTime.h"
 #include "pch.h"
 using namespace std;
 
 int main() {	
-    // 创建Temperature对象，设置当前温度为75.0
-    Temperature temp(75.0, 0.0, 100.0, 50.0, 10.0, 20.0, 30.0);
+    windowAttribute window1 = windowAttribute(1,1,1,0.8,"客厅窗户");//测试窗户
+    cout << window1.Get_Name() << endl;
+    vector<windowAttribute>testwindow;
+    testwindow.push_back(window1);
 
-    // 创建TemperatureControl对象，设置阈值为70.0
-    TemperatureControl tempControl(70.0);
+    lightSensor sensor1 = lightSensor(2, 3, 3);//测试传感器
+    cout << sensor1.Get_X() << endl;
+    vector<lightSensor>testsensor;
+    testsensor.push_back(sensor1);
 
-    // 检查温度是否过高
-    if (tempControl.IsTemperatureHigh(temp)) {
-        std::cout << "温度过高" << std::endl;
-    }
-    else {
-        std::cout << "温度正常" << std::endl;
+    lightLocation light1 = lightLocation(3, 5, 5, 10);//测试灯
+    cout << light1.Get_watt() << endl;
+    vector<lightLocation>testlight;
+    testlight.push_back(light1);
+
+    SunTime today = SunTime(4, 54, 0, 19, 1, 0);//测试时间
+    cout << today.Get_RiseTime() << endl;
+    cout << today.Get_SetTime() << endl;
+
+    lightController lightcontroller = lightController();//测试亮度计算
+    lightcontroller.calculateBrightness(testsensor, testlight, testwindow, today);
+    for (auto iter : testsensor) {
+        cout << iter.Get_Brightness() << endl;
     }
 
     return 0;
