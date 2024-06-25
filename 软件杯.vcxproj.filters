@@ -21,9 +21,6 @@
     <ClCompile Include="lightLocation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="devicePara.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="lightSensor.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

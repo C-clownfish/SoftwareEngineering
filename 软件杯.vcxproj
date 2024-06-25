@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="devicePara.cpp" />
     <ClCompile Include="lightLocation.cpp" />
     <ClCompile Include="lightSensor.cpp" />
     <ClCompile Include="main.cpp" />

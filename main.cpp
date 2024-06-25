@@ -18,6 +18,7 @@ int main() {
 	lightSensor sensor1 = lightSensor(1, 2, 3);
 
 	cout << calculateDistance(light1, sensor1);
-
+	000
 	return 0;
+	000000
 }
