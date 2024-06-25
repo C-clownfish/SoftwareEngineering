@@ -129,16 +129,20 @@
   <ItemGroup>
     <ClCompile Include="devicePara.cpp" />
     <ClCompile Include="GasSensor.cpp" />
+    <ClCompile Include="lightController.cpp" />
     <ClCompile Include="lightLocation.cpp" />
     <ClCompile Include="lightSensor.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="devicePara.h" />
     <ClInclude Include="GasSensor.h" />
+    <ClInclude Include="lightController.h" />
     <ClInclude Include="lightLocation.h" />
     <ClInclude Include="lightSensor.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
