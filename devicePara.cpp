@@ -1,5 +1,9 @@
 #include "devicePara.h"
 
+int devicePara::photo_sensor = 0;
+int devicePara::temperature_sensor = 0;
+int devicePara::gas_sensor = 0;
+int devicePara::recognition_sensor = 0;
 
 devicePara::devicePara() {
 	this->photo_sensor = 0;
