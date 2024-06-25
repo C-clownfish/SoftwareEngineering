@@ -21,12 +21,24 @@
     <ClCompile Include="lightLocation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="devicePara.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lightSensor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lightLocation.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Gas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="devicePara.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lightSensor.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
