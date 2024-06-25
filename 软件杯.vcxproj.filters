@@ -26,5 +26,8 @@
     <ClInclude Include="lightLocation.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Gas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
