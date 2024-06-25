@@ -1,9 +1,16 @@
 #pragma once
 class Window
 {
-	double length;//长
-	double width;//宽
-	double height;//高
+
+private:
+	double x;//长
+	double y;//宽
+	double z;//高
+	double openPercent;//打开的比例
+
+public:
+	Window();
+	Window(double x, double y, double z, double openPercent);
 
 };
 
