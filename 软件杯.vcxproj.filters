@@ -27,18 +27,48 @@
     <ClCompile Include="lightSensor.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GasSensor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lightController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="windowAttribute.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Temperature.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TemperatureControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lightLocation.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Gas.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="devicePara.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="lightSensor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GasSensor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lightController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="windowAttribute.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Temperature.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TemperatureControl.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

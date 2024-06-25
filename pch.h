@@ -5,7 +5,7 @@
 #include "GasSensor.h"
 #include "lightLocation.h"
 #include "lightSensor.h"
-#include "Window.h"
+#include "windowAttribute.h"
 #include <iostream>
 #include <string>
 #include <vector>

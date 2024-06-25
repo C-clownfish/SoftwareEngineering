@@ -5,7 +5,7 @@
 #include "lightSensor.h"
 #include "Temperature.h"
 #include "TemperatureControl.h"
-#include "Window.h"
+#include "windowAttribute.h"
 #include "pch.h"
 using namespace std;
 

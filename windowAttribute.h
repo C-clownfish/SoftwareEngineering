@@ -1,6 +1,6 @@
 #pragma once
 #include "pch.h"
-class Window
+class windowAttribute
 {
 
 private:
@@ -12,8 +12,8 @@ private:
 	static int number;//ÐòºÅ
 
 public:
-	Window();
-	Window(double x, double y, double z, double openPercent, string name);
+	windowAttribute();
+	windowAttribute(double x, double y, double z, double openPercent, string name);
 	double Get_X();
 	double Get_Y();
 	double Get_Z();

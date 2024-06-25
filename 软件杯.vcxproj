@@ -133,7 +133,9 @@
     <ClCompile Include="lightLocation.cpp" />
     <ClCompile Include="lightSensor.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Temperature.cpp" />
+    <ClCompile Include="TemperatureControl.cpp" />
+    <ClCompile Include="windowAttribute.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="devicePara.h" />
@@ -142,7 +144,9 @@
     <ClInclude Include="lightLocation.h" />
     <ClInclude Include="lightSensor.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="Temperature.h" />
+    <ClInclude Include="TemperatureControl.h" />
+    <ClInclude Include="windowAttribute.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
