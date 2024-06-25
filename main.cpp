@@ -15,7 +15,7 @@ double calculateDistance(lightLocation light, lightSensor sensor) {
 }
 
 int main() {
-	lightLocation light1 = lightLocation(0, 0, 0);
+	lightLocation light1 = lightLocation(0, 0, 0, 0);
 	lightSensor sensor1 = lightSensor(1, 2, 3);
 
 	cout << calculateDistance(light1, sensor1);
