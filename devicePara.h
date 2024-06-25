@@ -13,5 +13,10 @@ public:
 	int Get_temperature_sensor();
 	int Get_gas_sensor();
 	int Get_recognition_sensor();
+
+	void Add_photo_sensor();
+	void Add_temperature_sensor();
+	void Add_gas_sensor();
+	void Add_recognition_sensor();
 };
 

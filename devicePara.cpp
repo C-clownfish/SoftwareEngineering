@@ -35,3 +35,23 @@ int devicePara::Get_gas_sensor() {
 int devicePara::Get_recognition_sensor() {
 	return this->recognition_sensor;
 }
+
+
+void devicePara::Add_photo_sensor() {
+	this->photo_sensor++;
+}
+
+
+void devicePara::Add_temperature_sensor() {
+	this->temperature_sensor++;
+}
+
+
+void devicePara::Add_gas_sensor() {
+	this->gas_sensor++;
+}
+
+
+void devicePara::Add_recognition_sensor() {
+	this->recognition_sensor++;
+}
