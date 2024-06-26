@@ -7,6 +7,7 @@
 #include "TemperatureControl.h"
 #include "windowAttribute.h"
 #include "SunTime.h"
+#include "GasDetector.h"
 #include "pch.h"
 using namespace std;
 
@@ -34,6 +35,26 @@ int main() {
     lightcontroller.calculateBrightness(testsensor, testlight, testwindow, today);
     for (auto iter : testsensor) {
         cout << iter.Get_Brightness() << endl;
+    }
+
+    GasDetector detector(300); // 设置阈值为300
+
+    
+    double LG = 250;
+    double Butane = 320;
+    double Propane = 280;
+    double Methane = 310;
+    double alcohol = 100;
+    double hydrogen = 150;
+    double fumes = 400;
+
+    detector.UpdateReadings(LG, Butane, Propane, Methane, alcohol, hydrogen, fumes);
+
+    if (detector.CheckForAlarm()) {
+        cout << "警报，危险气体泄露" << endl;
+    }
+    else {
+        cout << "气体参数正常" << endl;
     }
 
     return 0;

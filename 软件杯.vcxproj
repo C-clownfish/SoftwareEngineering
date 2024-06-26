@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="devicePara.cpp" />
+    <ClCompile Include="GasDetector.cpp" />
     <ClCompile Include="GasSensor.cpp" />
     <ClCompile Include="lightController.cpp" />
     <ClCompile Include="lightLocation.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="lightLocation.h" />
     <ClInclude Include="lightSensor.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="GasDetector.h" />
     <ClInclude Include="SunTime.h" />
     <ClInclude Include="Temperature.h" />
     <ClInclude Include="TemperatureControl.h" />

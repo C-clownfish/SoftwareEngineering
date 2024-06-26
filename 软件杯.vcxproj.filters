@@ -45,6 +45,9 @@
     <ClCompile Include="SunTime.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GasDetector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lightLocation.h">
@@ -75,6 +78,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="SunTime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GasDetector.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

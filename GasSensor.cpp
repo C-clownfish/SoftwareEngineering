@@ -1,4 +1,4 @@
-#include"GasSensor.h"
+#include "GasSensor.h"
 
 Smoke::Smoke() {
 	this->LG = 0;
@@ -9,6 +9,7 @@ Smoke::Smoke() {
 	this->hydrogen = 0;
 	this->fumes = 0;
 }
+
 Smoke::Smoke(double LG, double Butane, double Propane, double Methane, double alcohol, double hydrogen, double fumes) {
 	this->LG = LG;
 	this->Butane = Butane;
@@ -19,72 +20,58 @@ Smoke::Smoke(double LG, double Butane, double Propane, double Methane, double al
 	this->fumes = fumes;
 }
 
-double Smoke::GetLG()
-{
+double Smoke::GetLG() const {
 	return this->LG;
 }
 
-double Smoke::GetButane()
-{
+double Smoke::GetButane() const {
 	return this->Butane;
 }
 
-double Smoke::GetPropane()
-{
+double Smoke::GetPropane() const {
 	return this->Propane;
 }
 
-double Smoke::GetMethane()
-{
+double Smoke::GetMethane() const {
 	return this->Methane;
 }
 
-double Smoke::Getalcohol()
-{
+double Smoke::Getalcohol() const {
 	return this->alcohol;
 }
 
-double Smoke::Gethydrogen()
-{
+double Smoke::Gethydrogen() const {
 	return this->hydrogen;
 }
 
-double Smoke::Getfumes()
-{
+double Smoke::Getfumes() const {
 	return this->fumes;
 }
 
-void Smoke::SetLG(double LG)
-{
+void Smoke::SetLG(double LG) {
 	this->LG = LG;
 }
 
-void Smoke::SetButane(double Butane)
-{
+void Smoke::SetButane(double Butane) {
 	this->Butane = Butane;
 }
 
-void Smoke::SetPropane(double Propane)
-{
+void Smoke::SetPropane(double Propane) {
 	this->Propane = Propane;
 }
 
-void Smoke::SetMethane(double Methane)
-{
+void Smoke::SetMethane(double Methane) {
 	this->Methane = Methane;
 }
 
-void Smoke::Setalcohol(double alcohol)
-{
+void Smoke::Setalcohol(double alcohol) {
 	this->alcohol = alcohol;
 }
 
-void Smoke::Sethydrogen(double hydrogen)
-{
+void Smoke::Sethydrogen(double hydrogen) {
 	this->hydrogen = hydrogen;
 }
 
-void Smoke::Setfumes(double fumes)
-{
+void Smoke::Setfumes(double fumes) {
 	this->fumes = fumes;
 }
