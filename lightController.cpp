@@ -1,6 +1,9 @@
 #include "lightController.h"
 #include "SunTime.h"
 const double coefficient = 90.0;
+const double sunny = 20000.0;
+const double overcast = 10000.0;
+const double rainy = 5000.0;
 
 lightController::lightController() {
 
@@ -24,6 +27,22 @@ double lightController::windowDistance(windowAttribute window, lightSensor senso
 
 
 double lightController::calculateBrightness(vector<lightSensor> &sensor, vector<lightLocation>pointLight, vector<windowAttribute>areaLight, SunTime today) {
+	double illumination;
+	switch (today.Get_Weather())
+	{
+	case 1://晴天
+		illumination = sunny;
+		break;
+	case 2://阴天
+		illumination = overcast;
+		break;
+	case 3://雨天
+		illumination = rainy;
+		break;
+	default:
+		illumination = sunny;
+		break;
+	}
 	for (auto &sensor_iter : sensor) {
 		double temp_brightness = 0.0;
 		for (auto light_iter : pointLight) {//灯的亮度
@@ -42,13 +61,13 @@ double lightController::calculateBrightness(vector<lightSensor> &sensor, vector<
 			else if (current_second > sunrise_second && current_second < sunset_second) {
 				double window_brightness;
 				if (current_second <= sunrise_second + 3600) {//线性增长
-					window_brightness = (100 + (20000 - 100) / 3600 * (current_second - sunrise_second));
+					window_brightness = (100 + (illumination - 100) / 3600 * (current_second - sunrise_second));
 				}
 				else if (current_second <= sunset_second - 3600) {
-					window_brightness = 20000;
+					window_brightness = illumination;
 				}
 				else if (current_second > sunset_second - 3600 && current_second < sunset_second) {
-					window_brightness = (20000 - (1 - (sunset_second - current_second) / 3600) * (20000 - 100));
+					window_brightness = (illumination - (1 - (sunset_second - current_second) / 3600) * (illumination - 100));
 				}
 				temp_brightness += window_brightness * window_iter.Get_Percent();
 			}

@@ -11,11 +11,13 @@ private:
 	int set_hour;
 	int set_minute;
 	int set_second;
+	string weather;
 
 public:
-	SunTime(int rise_hour, int rise_minute, int rise_second, int set_hour, int set_minute, int set_second);
+	SunTime(int rise_hour, int rise_minute, int rise_second, int set_hour, int set_minute, int set_second, string weather);
 	string Get_RiseTime();
 	string Get_SetTime();
+	int Get_Weather();
 	int Get_RiseHour();
 	int Get_RiseMinute();
 	int Get_RiseSecond();

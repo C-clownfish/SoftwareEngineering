@@ -1,11 +1,12 @@
 #include "SunTime.h"
-SunTime::SunTime(int rise_hour, int rise_minute, int rise_second, int set_hour, int set_minute, int set_second) {
+SunTime::SunTime(int rise_hour, int rise_minute, int rise_second, int set_hour, int set_minute, int set_second, string weather) {
 	this->rise_hour = rise_hour;
 	this->rise_minute = rise_minute;
 	this->rise_second = rise_second;
 	this->set_hour = set_hour;
 	this->set_minute = set_minute;
 	this->set_second = set_second;
+	this->weather = weather;
 }
 
 
@@ -46,4 +47,17 @@ int SunTime::Get_SetMinute() {
 
 int SunTime::Get_SetSecond() {
 	return this->set_second;
+}
+
+
+int SunTime::Get_Weather() {
+	if (this->weather == "Çç") {
+		return 1;
+	}
+	else if (this->weather == "Òõ") {
+		return 2;
+	}
+	else if(this->weather == "Óê") {
+		return 3;
+	}
 }

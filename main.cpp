@@ -27,7 +27,7 @@ int main() {
     vector<lightLocation>testlight;
     testlight.push_back(light1);
 
-    SunTime today = SunTime(4, 54, 0, 19, 1, 0);//测试时间
+    SunTime today = SunTime(4, 54, 0, 19, 1, 0, "晴");//测试时间
     cout << today.Get_RiseTime() << endl;
     cout << today.Get_SetTime() << endl;
 
