@@ -54,3 +54,34 @@ void lightSensor::Set_Z(double z) {
 void lightSensor::Set_Brightness(double brightness) {
 	this->brightness = brightness;
 }
+
+
+
+double lightSensor::Get_Window() {
+	return this->window;
+}
+
+
+double lightSensor::Get_Tape() {
+	return this->tape;
+}
+
+
+double lightSensor::Get_Light() {
+	return this->light;
+}
+
+
+void lightSensor::Set_Window(double window) {
+	this->window = window;
+}
+
+
+void lightSensor::Set_Tape(double tape) {
+	this->tape = tape;
+}
+
+
+void lightSensor::Set_Light(double light) {
+	this->light = light;
+}

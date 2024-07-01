@@ -1,16 +1,15 @@
 #ifndef PCH_H
 #define PCH_H
-
-#include "devicePara.h"
-#include "GasSensor.h"
-#include "lightLocation.h"
-#include "lightSensor.h"
-#include "windowAttribute.h"
-#include "SunTime.h"
 #include <iostream>
 #include <string>
-#include <vector>
 #include <algorithm>
 #include <Windows.h>
+#include <cmath>
+#include "GasDetector.h"
+#include "lightController.h"
+#include "SunTime.h"
+#include "TemperatureControl.h"
+#include "room.h"
+
 using namespace std;
 #endif

@@ -24,7 +24,7 @@ ROOM::ROOM(Smoke Smoke_Sensor, Temperature Temperature_Sensor, lightSensor Light
     this->height = height;
 }
 
-BOOL ROOM::Isinroom(double x, double y)
+bool ROOM::Isinroom(double x, double y)
 {
     if (x > this->x && x<(this->x + this->width) && y>this->y && y < (this->y + this->height))
     {

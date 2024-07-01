@@ -1,5 +1,4 @@
 #include "lightController.h"
-#include "SunTime.h"
 const double coefficient = 90.0;
 const double sunny = 20000.0;
 const double overcast = 10000.0;
@@ -18,6 +17,14 @@ double lightController::lightDistance(lightLocation light, lightSensor sensor) {
 }
 
 
+double lightController::tapeDistance(tapeLight tape, lightSensor sensor) {
+	double distance;
+	distance = pow((tape.Get_X() - sensor.Get_X()), 2) + pow((tape.Get_Y() - sensor.Get_Y()), 2) + pow((tape.Get_Z() - sensor.Get_Z()), 2);
+	distance = sqrt(distance);
+	return distance;
+}
+
+
 double lightController::windowDistance(windowAttribute window, lightSensor sensor) {
 	double distance;
 	distance = pow((window.Get_X() - sensor.Get_X()), 2) + pow((window.Get_Y() - sensor.Get_Y()), 2) + pow((window.Get_Z() - sensor.Get_Z()), 2);
@@ -26,7 +33,7 @@ double lightController::windowDistance(windowAttribute window, lightSensor senso
 }
 
 
-double lightController::calculateBrightness(vector<lightSensor> &sensor, vector<lightLocation>pointLight, vector<windowAttribute>areaLight, SunTime today) {
+double lightController::calculateBrightness(vector<lightSensor>& sensor, vector<lightLocation>pointLight, vector<windowAttribute>areaLight, vector<tapeLight>tapeLights, SunTime today) {
 	double illumination;
 	switch (today.Get_Weather())
 	{
@@ -45,9 +52,19 @@ double lightController::calculateBrightness(vector<lightSensor> &sensor, vector<
 	}
 	for (auto &sensor_iter : sensor) {
 		double temp_brightness = 0.0;
+		double window = 0.0;
+		double tape = 0.0;
+		double light = 0.0;
 		for (auto light_iter : pointLight) {//灯的亮度
-			temp_brightness += coefficient * light_iter.Get_watt() / lightDistance(light_iter, sensor_iter);
+			light += coefficient * light_iter.Get_Watt() / lightDistance(light_iter, sensor_iter);
+			temp_brightness += light;
 		}
+
+		for (auto tape_iter : tapeLights) {//灯带亮度
+			tape += coefficient * tape_iter.Get_Watt() / tapeDistance(tape_iter, sensor_iter);
+			temp_brightness += tape;
+		}
+
 		SYSTEMTIME time;
 		GetLocalTime(&time);
 		int sunrise_second = today.Get_RiseHour() * 3600 + today.Get_RiseMinute() * 60 + today.Get_RiseSecond();
@@ -56,7 +73,7 @@ double lightController::calculateBrightness(vector<lightSensor> &sensor, vector<
 		//cout << time.wYear << "/" << time.wMonth << "/" << time.wDay << "/" << time.wHour << "/" << time.wMinute << "/" << time.wSecond << endl;
 		for (auto window_iter : areaLight) {//窗户的亮度
 			if (current_second <= sunrise_second) {//日出前光照为0
-				temp_brightness += 0;
+				window += 0;
 			}
 			else if (current_second > sunrise_second && current_second < sunset_second) {
 				double window_brightness;
@@ -69,13 +86,17 @@ double lightController::calculateBrightness(vector<lightSensor> &sensor, vector<
 				else if (current_second > sunset_second - 3600 && current_second < sunset_second) {
 					window_brightness = (illumination - (1 - (sunset_second - current_second) / 3600) * (illumination - 100));
 				}
-				temp_brightness += window_brightness * window_iter.Get_Percent();
+				window += window_brightness * window_iter.Get_Percent();
 			}
 			else if (current_second >= sunset_second) {
-				temp_brightness += 0;
+				window += 0;
 			}
+			temp_brightness += window;
 		}
 		//cout << temp_brightness << endl;
+		sensor_iter.Set_Window(window);
+		sensor_iter.Set_Tape(tape);
+		sensor_iter.Set_Light(light);
 		sensor_iter.Set_Brightness(temp_brightness);
 	}
 	return 0;

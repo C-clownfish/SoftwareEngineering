@@ -6,8 +6,7 @@
 #include "tapeLight.h"   //·ÕÎ§µÆ
 #include "temperature.h"  //ÎÂ¶È´«¸ÐÆ÷
 #include "windowAttribute.h" //´°Á±
-#include<vector>
-using namespace std;
+#include <vector>
 class ROOM
 {
 private:
@@ -32,7 +31,7 @@ public:
 	ROOM();
 	//ROOM(Smoke  Smoke_Sensor, Temperature Temperature_Sensor, lightSensor Light_Sensor, devicePara device, vector<lightLocation> lights, vector<tapeLight> tapelights, windowAttribute curtain, double x, double y, double width, double height);
 	ROOM(Smoke  Smoke_Sensor, Temperature Temperature_Sensor, lightSensor Light_Sensor, vector<lightLocation> lights, vector<tapeLight> tapelights, windowAttribute curtain, double x, double y, double width, double height);
-	BOOL Isinroom(double x, double y);
+	bool Isinroom(double x, double y);
 	void init(double x, double y, double width, double height);
 
 

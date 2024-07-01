@@ -1,5 +1,4 @@
 #include "tapeLight.h"
-
 tapeLight::tapeLight(double x, double y, double z, int r, int g, int b, double watt) {
 	this->x = x;
 	this->y = y;
@@ -7,6 +6,17 @@ tapeLight::tapeLight(double x, double y, double z, int r, int g, int b, double w
 	this->r = r;
 	this->g = g;
 	this->b = b;
+	this->watt = watt;
+}
+
+
+tapeLight::tapeLight(double x, double y, double z, double watt) {
+	this->x = x;
+	this->y = y;
+	this->z = z;
+	this->r = 0;
+	this->g = 0;
+	this->b = 0;
 	this->watt = watt;
 }
 
@@ -102,6 +112,7 @@ double tapeLight::Get_Z() {
 	return this->z;
 }
 
+
 double tapeLight::Get_maxWatt() {
 	return this->maxWatt;
 }
@@ -114,4 +125,40 @@ double tapeLight::Get_minWatt() {
 
 double tapeLight::Get_averageWatt() {
 	return this->averageWatt;
+}
+
+
+void tapeLight::Gradient(double watt,int i) {//i是循环下标，0~360一周期
+	float R = 0, G = 0, B = 0;
+	float angle = (float)i / 180 * PI;
+	float H = 2 * PI;
+	float S = cos(angle * 4.0);
+	float I = watt / 20.0;
+
+	H = (float)H * cos(angle);
+	//cout << H << endl;
+
+	if (H < 120.f * PI / 180.f)
+	{
+		B = I * (1 - S);
+		R = I * (1 + S * cos(H) / cos(60.f * PI / 180.f - H));
+		G = 3 * I - R - B;
+	}
+	else if (H >= 120.f * PI / 180.f && H < 240 * PI / 180.f)
+	{
+		H -= (120.f * PI / 180.f);
+		R = I * (1 - S);
+		G = I * (1 + S * cos(H) / cos(60.f * PI / 180.f - H));
+		B = 3 * I - R - G;
+	}
+	else if (H >= 240.f * PI / 180.f)
+	{
+		H -= (240.f * PI / 180.f);
+		G = I * (1 - S);
+		B = I * (1 + S * cos(H) / cos(60.f * PI / 180.f - H));
+		R = 3 * I - B - G;
+	}
+	this->Set_R(R * 255 > 255 ? 255 : R * 255);
+	this->Set_G(G * 255 > 255 ? 255 : G * 255);
+	this->Set_B(B * 255 > 255 ? 255 : B * 255);
 }

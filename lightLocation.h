@@ -16,7 +16,7 @@ public:
 	double Get_X();
 	double Get_Y();
 	double Get_Z();
-	double Get_watt();
+	double Get_Watt();
 
 	double Get_maxWatt();
 	double Get_minWatt();

@@ -36,7 +36,7 @@ double lightLocation::Get_Z() {
 }
 
 
-double lightLocation::Get_watt() {
+double lightLocation::Get_Watt() {
 	return this->watt;
 }
 

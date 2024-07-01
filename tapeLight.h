@@ -1,4 +1,6 @@
 #pragma once
+#define PI 3.14159
+#include <cmath>
 class tapeLight//智能灯带
 {
 private:
@@ -16,6 +18,7 @@ private:
 	double averageWatt;//平均功率
 public:
 	tapeLight(double x, double y, double z, int r, int g, int b, double watt);
+	tapeLight(double x, double y, double z, double watt);
 	tapeLight(double x, double y, double z);
 	tapeLight();
 	void Set_R(int r);
@@ -37,5 +40,8 @@ public:
 	double Get_maxWatt();
 	double Get_minWatt();
 	double Get_averageWatt();
+
+	void Gradient(double watt, int i);
+
 };
 
