@@ -1,5 +1,5 @@
 #pragma once
-class Smoke {//只能烟雾传感器控制类
+class Smoke {//智能烟雾传感器类
 private:
 	double LG;    //液化气 liquefied gas
 	double Butane;   //丁烷
