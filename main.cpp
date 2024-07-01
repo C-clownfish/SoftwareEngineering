@@ -12,7 +12,7 @@
 using namespace std;
 
 int main() {	
-    windowAttribute window1 = windowAttribute(1,1,1,0.8,"客厅窗户");//测试窗户
+    /*windowAttribute window1 = windowAttribute(1, 1, 1, 0.8, "客厅窗户");//测试窗户
     cout << window1.Get_Name() << endl;
     vector<windowAttribute>testwindow;
     testwindow.push_back(window1);
@@ -55,7 +55,7 @@ int main() {
     }
     else {
         cout << "气体参数正常" << endl;
-    }
+    }*/
 
     return 0;
 }

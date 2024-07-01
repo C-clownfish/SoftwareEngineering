@@ -1,5 +1,5 @@
 #pragma once
-class tapeLight
+class tapeLight//ÖÇÄÜµÆ´ø
 {
 private:
 	double watt;
